@@ -10,7 +10,7 @@ const addDept = (askTask) => {
         .then((answers) => {
             console.log(answers);
             connection.query(
-                `INSERT INTO department (dept_name) VALUES (?)`, {
+                'INSERT INTO departments SET ?', {
                     dept_name: answers.deptName,
                 },
                 function(err) {

@@ -1,6 +1,3 @@
-DROP DATABASE IF EXISTS employee_db;
-CREATE DATABASE employee_db;
-
 USE employee_db;
 
 INSERT INTO departments (`dept_name`, `id`)
@@ -17,7 +14,7 @@ VALUES ("Lead Engineer", 100, 150000, 1);
 INSERT INTO roles (`title`, `id`, `salary`, `department_id`)
 VALUES ("Software Engineer", 101, 120000, 1);
 INSERT INTO roles (`title`, `id`, `salary`, `department_id`)
-VALUES ("Lead Accountant", 200, 125000, 2);
+VALUES ("Lead Accountant", 200, 140000, 2);
 INSERT INTO roles (`title`, `id`, `salary`, `department_id`)
 VALUES ("Accountant", 201, 125000, 2);
 INSERT INTO roles (`title`, `id`, `salary`, `department_id`)
@@ -27,7 +24,7 @@ VALUES ("Lawyer", 301, 190000, 3);
 INSERT INTO roles (`title`, `id`, `salary`, `department_id`)
 VALUES ("Sales Lead", 400, 100000, 4);
 INSERT INTO roles (`title`, `id`, `salary`, `department_id`)
-VALUES ("Salesperson", 401, 8000, 4);
+VALUES ("Salesperson", 401, 80000, 4);
 
 INSERT INTO employees (`id`, `first_name`, `last_name`, `role_id`, `manager_id`)
 VALUES (1, 'Michael', 'Scott', 100, null);
