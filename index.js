@@ -1,4 +1,3 @@
-const connection = require("./config/connection");
 const inquirer = require("inquirer");
 const questTask = require('./controllers/taskQuestion');
 
@@ -11,7 +10,6 @@ const toDeleteDept = require('./controllers/toDeleteDept');
 const toDeleteEmployee = require('./controllers/toDeleteEmployee');
 const toDeleteRole = require('./controllers/toDeleteRole');
 
-
 const dal = require('./controllers/dal');
 const queries = require('./db/queries');
 
@@ -20,6 +18,7 @@ const askTask = () => {
         .prompt(questTask)
         .then((answers) => {
             const task = answers.task;
+            // View Section
             if (task === 'View all employees') {
                 dal.viewAll(queries.allEmployees).then((res) => askTask());
             } else if (task === 'View employees by manager') {
@@ -32,18 +31,17 @@ const askTask = () => {
             } else if (task === 'View all departments') {
                 dal.viewAll(queries.allDepts)
                     .then(() => askTask());
+                // Add Section
             } else if (task === 'Add employee') {
                 addEmployee(askTask)
-
             } else if (task === 'Add role') {
                 addRole().then(() => askTask());
-
             } else if (task === 'Add department') {
                 addDept(askTask);
-
+                // Update Section
             } else if (task === 'Update employee') {
-                updateEmployee()
-
+                updateEmployee().then(() => askTask());
+                // Delete Section
             } else if (task === 'Delete employee') {
                 toDeleteEmployee()
                     .then((answers) => dal.deleteFrom(queries.deleteId, 'employees', Number(answers.empToDelete)))
@@ -56,6 +54,7 @@ const askTask = () => {
                 toDeleteDept()
                     .then((answers) => dal.deleteFrom(queries.deleteId, 'departments', Number(answers.deptToDelete)))
                     .then(() => askTask());
+                // Exit
             } else {
                 process.exit();
             }
