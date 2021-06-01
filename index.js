@@ -2,14 +2,14 @@ const connection = require("./config/connection");
 const inquirer = require("inquirer");
 const questTask = require('./controllers/taskQuestion');
 
-const addDept = require('./controllers/addDepartment');
-const addEmployee = require('./controllers/addEmployees');
-const addRole = require('./controllers/addRoles');
+const addDept = require('./controllers/addDept');
+const addEmployee = require('./controllers/addEmployee');
+const addRole = require('./controllers/addRole');
 const updateEmployee = require('./controllers/updateEmployee');
 const viewByManager = require('./controllers/viewByManager')
-const toDeleteDept = require('./controllers/deleteDepartment');
-const toDeleteEmployee = require('./controllers/deleteEmployee');
-const toDeleteRole = require('./controllers/deleteRole');
+const toDeleteDept = require('./controllers/toDeleteDept');
+const toDeleteEmployee = require('./controllers/toDeleteEmployee');
+const toDeleteRole = require('./controllers/toDeleteRole');
 
 
 const dal = require('./controllers/dal');
