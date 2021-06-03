@@ -60,13 +60,13 @@ The goal of this project was to create a Node.js command-line application, using
 
 ## Link to Full Video
 
-[Link to view Full Video of Application](add link here)
+[Link to view Full Video of Application](https://drive.google.com/file/d/16J2H-QGU83Wb0pAuEoJmqVFX2z0ass7h/view)
 
 ***
 
 ## GIF
 
-![Animated GIF of Application in Use](add gif here)
+![Animated GIF of Application in Use](Assets/Employee-Tracker.gif)
 
 ***
 
